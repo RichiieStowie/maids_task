@@ -47,3 +47,16 @@ To run the tests for the application, execute the following command:
 
 ```bash
 mvn test
+```
+
+## API Documentation
+
+Once the application is running, you can access the API documentation at:
+
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+This Swagger UI provides a detailed overview of all the endpoints available in the API along with their request and response schemas.
+
+## Configuration
+
+The application uses an H2 in-memory database by default. You can modify the database configuration in the `application.properties` file.
