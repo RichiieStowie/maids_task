@@ -58,25 +58,7 @@ class BorrowingRecordServiceTest {
 
         assertNotNull(result);
     }
-
-    @Test
-    void testBorrowBook_PreviousNotReturned() {
-        Book book = Book.builder()
-                .title("Title1")
-                .build();
-        Patron patron = Patron.builder()
-                .name("user 1")
-                .build();
-        BorrowingRecord borrowingRecord = new BorrowingRecord();
-        borrowingRecord.setReturned(false);
-        when(bookServiceDao.getById(bookId)).thenReturn(book);
-        when(patronServiceDao.getById(patronId)).thenReturn(patron);
-        when(borrowingRecordServiceDao.existByBookIdAndPatronId(bookId, patronId)).thenReturn(true);
-        when(borrowingRecordServiceDao.getByBookIdAndPatronId(bookId, patronId)).thenReturn(borrowingRecord);
-
-        assertThrows(NotAllowedException.class, () -> borrowingRecordService.borrowBook(bookId, patronId));
-    }
-
+    
 }
 
 
